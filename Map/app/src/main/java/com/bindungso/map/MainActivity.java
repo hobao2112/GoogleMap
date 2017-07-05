@@ -211,8 +211,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener,
                     }
                 });
                 MapStyleOptions mapStyleOptions = new MapStyleOptions(getResources().getString(R.string.style_json));
-                boolean s = myMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(MainActivity.this,R.raw.style));
-                if(s == false)
+                boolean s = myMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(MainActivity.this, R.raw.style));
+                if (s == false)
                     Toast.makeText(MainActivity.this, "Failed to set map style", Toast.LENGTH_SHORT).show();
                 myMap.getUiSettings().setZoomControlsEnabled(true);
                 if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -283,6 +283,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener,
                 .addOnConnectionFailedListener(this)
                 .build();
     }
+
     //https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=&radius=&type=&key=AIzaSyA_nIe6tt9rnS9BjJPSYVY2yd3I2NJPQPw
     private void runAsyncTask(String type) {
         setMarkerMyLocation();
